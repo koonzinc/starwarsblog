@@ -47,7 +47,7 @@ export const Home = ({ people, planets, addFavorites, favorites }) => {
 											<strong>Terrain:</strong> {planet.terrain}
 										</p>
 										<a href="#" className="btn btn-primary">Go Somewhere</a>
-										<a href="#" id="favorite" className="btn"><AiOutlineHeart size={20} /></a>
+										<a onClick={() => addFavorites(planet.name)} href="#" id="favorite" className="btn"><AiOutlineHeart size={20} /></a>
 									</div>
 								</div>
 							</div>

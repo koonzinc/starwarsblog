@@ -26,12 +26,12 @@ const Layout = () => {
 	const addFavorites = (favorite) => {
 		const newFavorites = [favorite, ...favorites];
 		setFavorites(newFavorites);
-		console.log(favorites);
+		console.log(favorite, ...favorites);
 	}
 	const removeFavorites = (name) => {
-		const removeArr = [...favorites].filter(favorite => favorite.name !== name);
+		const removeArr = [...favorites].filter(favorite => favorite !== name);
 		setFavorites(removeArr);
-		console.log(favorites);
+		console.log(favorite, ...favorites);
 	}
 
 	useEffect(() => {
@@ -57,8 +57,7 @@ const Layout = () => {
 		fetchPlanets();
 
 	}, [])
-		console.log('people', people);
-		console.log('planets', planets);
+		
 
 
 		

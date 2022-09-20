@@ -16,7 +16,13 @@ export const Navbar = ({ favorites, removeFavorites, people }) => {
 					<ul className="dropdown-menu">
 						<li className="dropdown-header">Favorites</li>
 						{favorites.map((favorite, index) => (
-							<li key={index}><a className="dropdown-item" href="#">{favorite}&nbsp;<BsTrashFill onClick={() => removeFavorites(favorite)}/></a></li>
+							<li key={index}>
+								<a className="dropdown-item" href="#">
+									{favorite}&nbsp;
+									<BsTrashFill onClick={() => removeFavorites(favorite)} style={{cursor: 'pointer'}}/>
+								</a>
+							</li>
+
 							
 						))}
 

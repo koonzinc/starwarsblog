@@ -25,7 +25,7 @@ export const Home = ({ people, planets }) => {
 									<div className="card-body">
 										<h5 className="card-title">{person.name}</h5>
 										<p className="card-text">Gender: {person.gender}<br />Hair Color: {person.hair_color}<br />Eye-color: {person.eye_color}</p>
-										<a href="#" className="btn btn-primary">Learn More</a>
+										<a href="#" className="btn btn-primary">Go Somewhere</a>
 										<a href="#" id="favorite" className="btn"><AiOutlineHeart size={20} /></a>
 									</div>
 								</div>

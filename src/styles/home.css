@@ -1,0 +1,17 @@
+.dropdown {
+    display: flex;
+    
+}
+.favoriteLabel {
+    background-color: grey;
+    padding: 5px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight:bolder;
+}
+#favorite {
+    margin-left: 71px;
+    background-color: transparent;
+    border: 1px solid #F9C10B;
+    color: #F9C10B;
+}

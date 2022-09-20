@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
+
+
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
@@ -17,12 +19,26 @@ const Layout = () => {
 	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
 	const basename = process.env.BASENAME || "";
 
-	const [people, setPeople] = useState([])
-	const [planets, setPlanets] = useState([])
+	const [people, setPeople] = useState([]);
+	const [planets, setPlanets] = useState([]);
+	const [favorites, setFavorites] = useState([]);
+
+	const addFavorites = (favorite) => {
+		const newFavorites = [favorite, ...favorites];
+		setFavorites(newFavorites);
+		console.log(favorites);
+	}
+	const removeFavorites = (name) => {
+		const removeArr = [...favorites].filter(favorite => favorite.name !== name);
+		setFavorites(removeArr);
+		console.log(favorites);
+	}
 
 	useEffect(() => {
+	
+		
 		const fetchPeople = async () => {
-			await fetch('https://www.swapi.tech/api/people/')
+			await fetch('https://swapi.dev/api/people/')
 				.then(response => response.json())
 				.then(json => {
 					setPeople(json.results)
@@ -30,7 +46,7 @@ const Layout = () => {
 		}
 
 		const fetchPlanets = async () => {
-			await fetch('https://www.swapi.tech/api/planets/')
+			await fetch('https://swapi.dev/api/planets/')
 				.then(response => response.json())
 				.then(json => {
 					setPlanets(json.results)
@@ -39,6 +55,7 @@ const Layout = () => {
 
 		fetchPeople();
 		fetchPlanets();
+
 	}, [])
 		console.log('people', people);
 		console.log('planets', planets);
@@ -50,10 +67,10 @@ const Layout = () => {
 		<div>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar  />
+					<Navbar favorites={favorites} removeFavorites={removeFavorites} people={people} />
 					<Switch>
 						<Route exact path="/">
-							<Home people={people} planets={planets}  />
+							<Home people={people} planets={planets} addFavorites={addFavorites} favorites={favorites}  />
 						</Route>
 						<Route exact path="/demo">
 							<Demo />

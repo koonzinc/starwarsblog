@@ -19,7 +19,7 @@ export const Home = ({ people, planets, addFavorites, favorites }) => {
 									<div className="card-body">
 										<h5 value={favorites} className="card-title">{person.name}</h5>
 										<p className="card-text">
-											<strong>ender:</strong> {person.gender}<br />
+											<strong>Gender:</strong> {person.gender}<br />
 											<strong>Hair Color:</strong> {person.hair_color}<br />
 											<strong>Eye Color:</strong> {person.eye_color}
 										</p>

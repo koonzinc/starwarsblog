@@ -9,7 +9,7 @@ export const Home = ({ people, planets, addFavorites, favorites }) => {
 	return (
 		<div className="container">
 			<div className="container-fluid mt-5">
-				<h2 className="font-weight-light mb-5">haracters</h2>
+				<h2 className="font-weight-light mb-5">Characters</h2>
 				<div className="d-flex flex-row flex-nowrap overflow-auto">
 					{people.map((person, index) => {
 						return (

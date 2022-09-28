@@ -69,7 +69,7 @@ const Layout = () => {
 					<Navbar favorites={favorites} removeFavorites={removeFavorites} people={people} />
 					<Switch>
 						<Route exact path="/">
-							<Home people={eople} planets={planets} addFavorites={addFavorites} favorites={favorites}  />
+							<Home people={people} planets={planets} addFavorites={addFavorites} favorites={favorites}  />
 						</Route>
 						<Route exact path="/demo">
 							<Demo />
